@@ -1,4 +1,6 @@
+#!/usr/bin/env python3
 import sys
+import webbrowser
 
 from geopy.geocoders import Nominatim
 geolocator = Nominatim(user_agent="ijustlovemath forecast app")
@@ -17,3 +19,4 @@ url_base = "https://forecast.weather.gov/MapClick.php?lat={:.4f}&lon={:.4f}&unit
 url = url_base.format(location.latitude, location.longitude)
 
 print("Forecast is here: " + url)
+webbrowser.open(url)
